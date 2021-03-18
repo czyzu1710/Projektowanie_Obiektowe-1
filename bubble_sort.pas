@@ -4,7 +4,6 @@ uses sysutils,  math;
 
 var
 	rand : Real;
-	(*rand_arr = array[0..10] of real;*)
 	rand_arr : array[0..99] of Real;
 	i : Integer;
 
@@ -19,16 +18,15 @@ procedure bubble_sort(var arr : array of real);
 		tmp : Real;
 		i,j : Integer;
 	begin
-		for i := 0 to Length(arr)-1 do
+		for i := 0 to Length(arr) - 1 do
 			begin
-				for j := 0 to Length(arr)-1 do
+				for j := 0 to Length(arr) - 2 - i do
 					begin
-						if ( arr[i] < arr[j] ) then
+						if ( arr[j] > arr[j+1] ) then
 							begin
-								{*writeln('if');*}
-								tmp := arr[i];
-								arr[i] := arr[j];
-								arr[j] := tmp;
+								tmp := arr[j];
+								arr[j] := arr[j+1];
+								arr[j+1] := tmp;
 							end;
 					end;
 			end;
@@ -37,9 +35,6 @@ procedure bubble_sort(var arr : array of real);
 
 begin
 	randomize();
-	(*rand := random(5);
-	writeln(rand);
-	*)
 
 	generate_random_numbers(100);
 	
@@ -53,8 +48,4 @@ begin
 	writeln('Sorted:');
 	for i := 0 to Length(rand_arr)-1 do
 		writeln(FormatFloat('00', rand_arr[i]));
-
-
-	(*rand_arr[i] := random() * 100;*)
-	(*rand_arr[i] := RandomRange(0,100);*)
 end.
