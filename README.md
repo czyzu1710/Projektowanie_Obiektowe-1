@@ -1,4 +1,4 @@
 # Projektowanie_Obiektowe
 
 SONAR SCAN:
-<img src="https://imgur.com/NLCOhWc"></img>
+<img src="https://i.imgur.com/NLCOhWc.png"></img>
